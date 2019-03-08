@@ -13,7 +13,14 @@ const available_roles = [
 
 module.exports = {
   name: 'role',
-  description: "add new role to this user",
+  aliases: ['roles'],
+  description: 'add new role to this user',
+  guildOnly: true,
+  args: true,
+  usage: '<action> <roles>      || <action> could be [+/-, set/del, add/rm]',
+  positive_action: '+, set, add, new',
+  negative_action: '-, rm, del, remove',
+  cooldown: 2,
   async execute(message, args) {
     console.log(args);
     if ( args.length < 2 ) {
@@ -60,6 +67,7 @@ module.exports = {
       }
       case '-':
       case 'rm':
+      case 'del':
       case 'delete':
       case 'remove': {
         areValidRoles.forEach(async text_role => {
