@@ -40,8 +40,5 @@ module.exports = {
         return message.reply("No.");
       }
     }
-
-    // No case
-    message.reply("I don't understand you :c");
   }
 };
