@@ -31,7 +31,8 @@ You should not write your help-command for your new bot command. Instead of this
 in, i.e. `role.js`,
 you should have text like:
 
-```  module.exports = {
+```  
+module.exports = {
   name: 'user',
   aliases: ['usr', 'username'],
   description: 'Username, UserID, UserAvatar',
@@ -42,4 +43,5 @@ you should have text like:
   execute(message, args) {
     message.reply("Your is an user!");
   }
+}
 ```
