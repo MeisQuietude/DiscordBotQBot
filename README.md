@@ -1,11 +1,10 @@
 # Discord Bot: QBot
-#####version: 0.1 alpha
-#####author: Quietude / MeisQuietude
-#####server: https://discord.gg/hWJvzAQ
 
-##Available Commands
+#### version: 0.1 alpha
+#### author: Quietude / MeisQuietude
+#### server: https://discord.gg/hWJvzAQ
 
-<br>
+## Available Commands
 
 > `!` - current prefics
 * `help`  - dynamic help
