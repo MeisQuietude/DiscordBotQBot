@@ -24,7 +24,7 @@ module.exports = {
       }
     } else {
       let arg1 = +args[0];
-      let arg2 = +args[1];
+      let arg2 = +args[1] + 1;
 
       if (arg1 >= arg2) {
         min = arg2;
