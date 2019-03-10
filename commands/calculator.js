@@ -12,7 +12,7 @@ module.exports = {
     const allowed = '()+-*/0123456789.';
     const expression = args.join("");
 
-    const lg_msg = `ID@${message.member.user.id} EXPRESSION@${expression}`;
+    const lg_msg = `ID@${message.author.id} EXPRESSION@${expression}`;
     log.execute(lg_msg, 'calculator');
 
     if (expression !== expression.split("").filter(sym => allowed.includes(sym)).join("")) {
