@@ -1,0 +1,7 @@
+{
+  "prefix": "!",
+  "default_role": "Default User",
+  "logs": {
+    "role" : "./logs/role.txt"
+  }
+}

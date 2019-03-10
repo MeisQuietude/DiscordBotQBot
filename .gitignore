@@ -25,6 +25,5 @@ jspm_packages/
 .env
 
 # MY
-config.json
 /logs/
 .idea/
