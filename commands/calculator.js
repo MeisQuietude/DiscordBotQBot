@@ -16,7 +16,7 @@ module.exports = {
     log.execute(lg_msg, 'calculator');
 
     if (expression !== expression.split("").filter(sym => allowed.includes(sym)).join("")) {
-      return message.reply("You can use ony digits and primitive operators");
+      return message.reply("You can use only digits and primitive operators");
     }
 
     try {
