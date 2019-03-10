@@ -22,7 +22,6 @@ module.exports = {
   negative_action: '-, rm, del, remove',
   cooldown: 2,
   async execute(message, args) {
-    console.log(args);
     if ( args.length < 2 ) {
       message.reply("Need at least action (set or remove) and 1 role: [set/remove] [...roles]");
       return;
