@@ -1,4 +1,5 @@
-const {token, default_role, prefix} = require('./config.json');
+const token = process.env.BOTTOKEN;
+const {default_role, prefix} = require('./config.json');
 const log = require('./logged');
 
 const fs = require('fs');
