@@ -3,5 +3,6 @@
   "version": "1.0.0",
   "dependencies": {
     "discord.js": "latest"
-  }
+  },
+  "scripts": { "start": "node index.js" }
 }
