@@ -1,8 +1,14 @@
 {
-  "name": "DiscordBot",
-  "version": "1.0.0",
+  "name": "discord-bot-qbot",
+  "version": "0.3.0",
+  "description": "A Discord Bot. QBot",
   "dependencies": {
     "discord.js": "latest"
   },
-  "scripts": { "start": "node index.js" }
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Quietude",
+  "license": "GNU"
 }
