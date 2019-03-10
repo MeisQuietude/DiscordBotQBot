@@ -72,7 +72,7 @@ client.on('message', message => {
   try {
     command.execute(message, args);
   } catch (error) {
-    log.execute(`Unknown command: ${commandName}`, `unknown commands`);
+    log.execute(`Unknown command: ${commandName}\n${error}\n\n`, `errors`);
     message.reply('there is no that command!');
   }
 });
