@@ -77,11 +77,11 @@ client.on('message', message => {
   }
 });
 
-client.on('guildMemberAdd', member => {
+client.on('guildMemberAdd', async member => {
   const channel = member.guild.channels.find(ch => ch.name === 'welcome');
   if ( !channel ) return;
   channel.send(`Welcome to the server, ${member}`);
-  member.addRole(member.guild.roles.find(role => role.name === default_role));
+  await member.addRole(member.guild.roles.find(role => role.name === default_role));
   log.execute(`${member} ${member.user.id}`)
 });
 
