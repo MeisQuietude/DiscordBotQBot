@@ -14,8 +14,9 @@ module.exports = {
     const img = await googleParser.img(data);
     const jpg = await googleParser.jpg(data);
 
-    message.reply(src[0].link);
-    message.reply(img[0].url);
-    message.reply(jpg[0].img);
+    let answer = "";
+
+    answer += `${src[0].title}\n${src[0].description}\n${src[0].link}\n${img[0].img}`;
+    message.reply(answer);
   }
 };
