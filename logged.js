@@ -5,9 +5,9 @@ module.exports = {
   name: 'log',
   execute(message, file) {
     let d = new Date();
-    let date = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}`;
+    let date = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
     let time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}:${d.getMilliseconds()}`;
-    message = `${date}, ${time}; ${message}\n`;
+    message = `${date} ${time} @MESSAGE:${message}\n`;
     let file_path = `${relative_log_path}${file.trim()}`;
     if (!file_path.endsWith('.txt')) file_path += '.txt';
 
