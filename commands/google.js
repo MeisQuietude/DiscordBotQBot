@@ -10,7 +10,7 @@ module.exports = {
   usage: '<string>',
   cooldown: 4,
   async execute(message, args) {
-    const data = args.join(" ").trim();
+    const data = args.join(" ");
     const src = await googleParser.search(data);
     const img = await googleParser.img(data);
 
@@ -20,6 +20,6 @@ module.exports = {
                   ~~ ${img[0].img} ~~`;
 
     message.reply(answer);
-    logged.execute(`ID@${message.author.id} CONTENT@ ${data}`);
+    logged.execute(`ID@${message.author.id} CONTENT@ ${data}`, 'google');
   }
 };
