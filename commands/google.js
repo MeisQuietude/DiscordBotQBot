@@ -14,14 +14,8 @@ module.exports = {
     const img = await googleParser.img(data);
     const jpg = await googleParser.jpg(data);
 
-    message.reply(src);
-    message.reply(img);
-    message.reply(jpg);
-
-    message.reply("======");
-
-    message.reply(src[0]);
-    message.reply(img[0]);
-    message.reply(jpg[0]);
+    message.reply(src[0].link);
+    message.reply(img[0].url);
+    message.reply(jpg[0].img);
   }
 };
