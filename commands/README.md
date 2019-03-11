@@ -43,5 +43,5 @@ module.exports = {
   execute(message, args) {
     message.reply("Your is an user!");
   }
-}
+};
 ```
