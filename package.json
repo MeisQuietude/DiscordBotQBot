@@ -3,7 +3,8 @@
   "version": "0.3.0",
   "description": "A Discord Bot. QBot",
   "dependencies": {
-    "discord.js": "latest"
+    "discord.js": "latest",
+    "google-parser": "^2.0.5"
   },
   "main": "index.js",
   "scripts": {
