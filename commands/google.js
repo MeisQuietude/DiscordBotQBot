@@ -12,11 +12,12 @@ module.exports = {
     const data = args.join(" ").trim();
     const src = await googleParser.search(data);
     const img = await googleParser.img(data);
-    const jpg = await googleParser.jpg(data);
 
-    let answer = "";
+    const answer = `**${src[0].title}**\n
+                  ${src[0].description}\n
+                  ${src[0].link}\n
+                  ~~ ${img[0].img} ~~`;
 
-    answer += `${src[0].title}\n${src[0].description}\n${src[0].link}\n${img[0].img}`;
     message.reply(answer);
   }
 };
