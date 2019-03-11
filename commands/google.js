@@ -1,4 +1,5 @@
 const googleParser = require('google-parser');
+const logged = require('../logged');
 
 module.exports = {
   name: 'google',
@@ -19,5 +20,6 @@ module.exports = {
                   ~~ ${img[0].img} ~~`;
 
     message.reply(answer);
+    logged.execute(`ID@${message.author.id} CONTENT@ ${data}`);
   }
 };
