@@ -5,7 +5,8 @@
   "dependencies": {
     "lodash": ">= 4.17.11",
     "discord.js": "latest",
-    "google-parser": "^2.0.5"
+    "google-parser": "^2.0.5",
+    "node-fetch": "latest"
   },
   "main": "index.js",
   "scripts": {
