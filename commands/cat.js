@@ -12,11 +12,11 @@ module.exports = {
   execute(message, args) {
     fetch('https://aws.random.cat/meow')  // https://cataas.com/cat
         .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-      throw new Error('Request failed!');
-    }, networkError => log.execute(networkError.message, 'errors'))
+          if ( res.ok ) {
+            return res.json();
+          }
+          throw new Error('Request failed!');
+        }, networkError => log.execute(networkError.message, 'errors'))
         .then(jsonRes => {
           message.reply(jsonRes.file);
         })
