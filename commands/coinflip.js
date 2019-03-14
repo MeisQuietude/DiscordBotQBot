@@ -9,11 +9,8 @@ module.exports = {
   execute(message, args) {
     // Default case with no args
     if ( !args.length ) {
-      if ( Math.floor(Math.random() * 100) < 50 ) {
-        return message.reply("Heads!");
-      } else {
-        return message.reply("Tails!");
-      }
+      return message.reply(Math.random() < 0.5 ? "Heads!" : "Tails!");
+
     } else if ( args.includes('or') || args.includes('или') ) {
       const i = args.includes('or') ? args.indexOf('or') : args.indexOf('или');
       const arg1 = args.slice(0, i).join(" ");
@@ -25,20 +22,11 @@ module.exports = {
       if ( !arg2 )
         return message.reply(arg1);
 
-      if ( Math.floor(Math.random() * 100) < 50 ) {
-        return message.reply(arg1);
-      } else {
-        return message.reply(arg2);
-      }
-
+      return message.reply(Math.random() < 0.5 ? arg1 : arg2);
     }
     // Case with one argument: yes or no
     else {
-      if ( Math.floor(Math.random() * 100) < 50 ) {
-        return message.reply("Yes.");
-      } else {
-        return message.reply("No.");
-      }
+      return message.reply(Math.random() < 0.5 ? "Yes" : "No");
     }
   }
 };
