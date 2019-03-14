@@ -17,7 +17,7 @@ module.exports = {
           throw new Error('Request failed!');
         }, networkError => log.execute(networkError.message, 'errors'))
         .then(jsonRes => {
-          message.reply(jsonRes);
+          message.reply(jsonRes.message);
         })
 
   }
