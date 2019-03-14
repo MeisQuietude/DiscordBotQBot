@@ -19,6 +19,5 @@ module.exports = {
         .then(jsonRes => {
           message.reply(jsonRes.message);
         })
-
   }
 };
