@@ -5,6 +5,8 @@ const log = require('./logged');
 const fs = require('fs');
 const Discord = require('discord.js');
 
+const rainbow = require('./rainbow');
+
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
@@ -21,6 +23,7 @@ for ( const file of commandFiles ) {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  setInterval(rainbow.rainbow, 5, client);
 });
 
 client.on('message', message => {
@@ -35,7 +38,7 @@ client.on('message', message => {
   // Find command by name or alias
   const command = client.commands.get(commandName)
       || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-  if (!command) return;
+  if ( !command ) return;
 
   // If we must not use this in DM
   if ( command.guildOnly && message.channel.type !== 'text' ) {
