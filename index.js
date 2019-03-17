@@ -85,7 +85,6 @@ client.on('guildMemberAdd', async member => {
   if ( !channel ) return;
   channel.send(`Welcome to the server, ${member}`);
   await member.addRole(member.guild.roles.find(role => role.name === default_role));
-  log.execute(`${member} ${member.user.id}`)
 });
 
 client.login(token);
