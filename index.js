@@ -5,7 +5,7 @@ const log = require('./logged');
 const fs = require('fs');
 const Discord = require('discord.js');
 
-const rainbow = require('./rainbow');
+// const rainbow = require('./rainbow');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -23,7 +23,7 @@ for ( const file of commandFiles ) {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  setInterval(rainbow.rainbow, 5, client);
+  // setInterval(rainbow.rainbow, 5, client);
 });
 
 client.on('message', message => {
