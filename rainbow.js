@@ -1,3 +1,5 @@
+const {rainbow_role} = require('./config');
+
 function* getColors() {
   let i = 0;
   while ( true ) {
@@ -25,7 +27,7 @@ const newColor = getColors();
 module.exports = {
   async rainbow(client) {
     const server = await client.guilds.get('273840797080748033');
-    const role = await server.roles.get('276372872828813312');
+    const role = await server.roles.get(rainbow_role);
     await role.setColor(newColor.next().value);
   }
 };
