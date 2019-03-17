@@ -1,5 +1,4 @@
-// const token = process.env.BOTTOKEN;
-const token = 'NTUzMjE0MDA0NDcwNzQzMDQw.D2_hAA.gxJGhdpLpaO4CSB85xZtCgJXCqY';
+const token = process.env.BOTTOKEN;
 const {default_role, prefix} = require('./config.json');
 const log = require('./logged');
 
