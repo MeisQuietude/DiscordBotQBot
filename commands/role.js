@@ -4,7 +4,7 @@ const available_roles = [
   'Python', 'Django', 'Flask', 'Tornado',
   'Java',
   'Base Web',
-  'JavaScript', 'Vue', 'React', 'Angular', 'Backbone',
+  'JavaScript', 'NodeJS', 'Vue', 'React', 'Angular', 'Backbone',
   'PHP',
   'C#', 'Unity',
   'C++',
