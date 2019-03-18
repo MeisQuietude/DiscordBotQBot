@@ -8,17 +8,15 @@ class Rainbow {
     this.colors = this.generateColor();
   }
 
-  *generateColor() {
+  * generateColor() {
     let i = 0;
     while ( true ) {
-      i === 255? i = 0 : ++i;
-      {
-        const red = sin_to_hex(i, 0 * Math.PI * 2 / 3); // 0   deg
-        const blue = sin_to_hex(i, 1 * Math.PI * 2 / 3); // 120 deg
-        const green = sin_to_hex(i, 2 * Math.PI * 2 / 3); // 240 deg
+      i === 255 ? i = 0 : ++i;
+      const red = sin_to_hex(i, 0 * Math.PI * 2 / 3); // 0   deg
+      const blue = sin_to_hex(i, 1 * Math.PI * 2 / 3); // 120 deg
+      const green = sin_to_hex(i, 2 * Math.PI * 2 / 3); // 240 deg
 
-        yield '#' + red + green + blue;
-      }
+      yield '#' + red + green + blue;
     }
 
     function sin_to_hex(i, phase) {
