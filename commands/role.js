@@ -1,10 +1,10 @@
-const log = require('../logged');
+const log = require('../advanced/logged');
 const guild = require("discord.js");
 const available_roles = [
   'Python', 'Django', 'Flask', 'Tornado',
   'Java',
   'Base Web',
-  'JavaScript', 'NodeJS', 'Vue', 'React', 'Angular', 'Backbone',
+  'JavaScript', 'Vue', 'React', 'Angular', 'Backbone',
   'PHP',
   'C#', 'Unity',
   'C++',

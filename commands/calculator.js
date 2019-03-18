@@ -1,4 +1,4 @@
-const log = require('../logged');
+const log = require('../advanced/logged');
 
 module.exports = {
   name: 'calculator',

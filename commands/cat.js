@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const log = require('../logged');
+const log = require('../advanced/logged');
 
 module.exports = {
   name: 'cat',
