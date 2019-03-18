@@ -3,10 +3,17 @@
   "version": "0.3.0",
   "description": "A Discord Bot. QBot",
   "dependencies": {
-    "lodash": ">= 4.17.11",
+    "bufferutil": "^3.0.3",
     "discord.js": "latest",
     "google-parser": "^2.0.5",
-    "node-fetch": "latest"
+    "libsodium-wrappers": ">=0.7.3",
+    "lodash": ">= 4.17.11",
+    "node-fetch": "latest",
+    "node-gyp": "3.8.0",
+    "node-opus": "^0.2.7",
+    "opusscript": "^0.0.6",
+    "sodium": "^2.0.3",
+    "uws": "^9.14.0"
   },
   "main": "index.js",
   "scripts": {
