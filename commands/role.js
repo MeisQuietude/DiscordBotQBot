@@ -3,8 +3,8 @@ const guild = require("discord.js");
 const available_roles = [
   'Python', 'Django', 'Flask', 'Tornado',
   'Java',
-  'Base Web',
-  'JavaScript', 'Vue', 'React', 'Angular', 'Backbone',
+  'Web',
+  'JavaScript', 'NodeJS', 'Vue', 'React', 'Angular', 'Backbone',
   'PHP',
   'C#', 'Unity',
   'C++',
