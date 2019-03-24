@@ -6,12 +6,12 @@
 
 ## Available Commands
 
-> `!` - current prefics
+>> `!` - current prefics
 * `help`  - dynamic help
 
 
 ### Moderation
-* `user`  - info about user in server ( Name, ID, Avatar )
+* `user`  - info about user on server ( Name, ID, Avatar )
 * `role` - set role to yourself ( modify in settings )
 
 ### Useful
@@ -19,7 +19,7 @@
 * `calculate` - calculate expression
 
 ### Miscellaneous
-* `random` - get random number (0 - 100 by default)
+* `random` - get random number ( 0 - 100 by default )
 * `coinflip` - play coinflip
 * `dog` - get random dog image
 * `cat` - get random cat image
