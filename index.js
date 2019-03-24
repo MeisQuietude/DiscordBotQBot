@@ -5,9 +5,11 @@ const token = process.env.BOTTOKEN;
 const {default_role, prefix} = require('./config.json');
 
 // Change role color to rainbow
-const rainbow = require('./advanced/rainbow');
-// Logs
+// const rainbow = require('./advanced/rainbow');
+
+// Advanced utils
 const log = require('./advanced/logged');
+const uprate = require('./advanced/uprate');
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -25,6 +27,8 @@ for ( const file of commandFiles ) {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
+  setInterval(uprate.uprate, uprate.timeInMilliseconds, client);
+
   // const setRoleRainbowColor = new rainbow.Rainbow(client);
   // setRoleRainbowColor.start();
 });
