@@ -11,8 +11,9 @@ module.exports = {
   cooldown: 4,
   async execute(message, args) {
     const data = args.join(" ");
-    const src = await googleParser.search(data);
-    const img = await googleParser.img(data);
+
+    const src = await googleParser.search(search = data, safe = true);
+    const img = await googleParser.img(search = data, safe = true);
 
     const answer = `**${src[0].title}**\n
                   ${src[0].description}\n
@@ -20,6 +21,7 @@ module.exports = {
                   ~~ ${img[0].img} ~~`;
 
     message.reply(answer);
+
     logged.execute(`ID@${message.author.id} CONTENT@ ${data}`, 'google');
   }
 };
