@@ -7,33 +7,21 @@ module.exports = {
   usage: '[<number from> <number to>]',
   cooldown: 1,
   execute(message, args) {
-    let min, max;
+    let min, max; // included
 
     if ( !args.length ) {
       min = 0;
       max = 100;
     } else if ( args.length === 1 ) {
-      const arg = +args[0];
-
-      if ( arg >= 0 ) {
-        min = 0;
-        max = arg;
-      } else {
-        min = arg;
-        max = 0;
-      }
+      min = 0;
+      max = +args[0];
+    } else if ( args.length === 2 ) {
+      min = +args[0];
+      max = +args[1];
     } else {
-      let arg1 = +args[0];
-      let arg2 = +args[1] + 1;
-
-      if (arg1 >= arg2) {
-        min = arg2;
-        max = arg1;
-      } else {
-        min = arg1;
-        max = arg2;
-      }
+      return message.reply("Too many arguments...")
     }
-    return message.reply(Math.floor(Math.random() * (max - min)) + min);
+
+    return message.reply(Math.floor(Math.random() * (++max - min)) + min);
   }
 };
