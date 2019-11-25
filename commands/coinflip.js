@@ -1,3 +1,5 @@
+import { getRandomNumber } from '../utils/utils';
+
 module.exports = {
   name: 'coinflip',
   aliases: ['cf', 'ff'],
@@ -10,18 +12,18 @@ module.exports = {
 
     if (!args.length) {
       // Heads or Tails
-      return message.reply(Math.random() < 0.5 ? "Heads!" : "Tails!");
-      
+      return message.reply(getRandomNumber(0, 1) ? "Heads!" : "Tails!");
+
     } else if (args.length === 1) {
       // Yes or No
-      return message.reply(Math.random() < 0.5 ? "Yes!" : "No!");
+      return message.reply(getRandomNumber(0, 1) ? "Yes!" : "No!");
 
     } else {
       // Multiple choice
       const min = 0;
-      const max = args.length;
+      const max = --args.length;
 
-      const index = Math.floor(Math.random() * (max - min)) + min;
+      const index = getRandomNumber(min, max);
 
       return message.reply(args[index]);
     }

@@ -1,3 +1,5 @@
+import { getRandomNumber } from '../utils/utils';
+
 module.exports = {
   name: "random number",
   aliases: ["rand", "r", "random"],
@@ -22,6 +24,6 @@ module.exports = {
       return message.reply("Too many arguments...")
     }
 
-    return message.reply(Math.floor(Math.random() * (++max - min)) + min);
+    return message.reply(getRandomNumber(min, max));
   }
 };
