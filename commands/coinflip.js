@@ -7,26 +7,24 @@ module.exports = {
   usage: '[[arg1] [arg2]]',
   cooldown: 1,
   execute(message, args) {
-    // Default case with no args
-    if ( !args.length ) {
+
+    if (!args.length) {
+      // Heads or Tails
       return message.reply(Math.random() < 0.5 ? "Heads!" : "Tails!");
+      
+    } else if (args.length === 1) {
+      // Yes or No
+      return message.reply(Math.random() < 0.5 ? "Yes!" : "No!");
 
-    } else if ( args.includes('or') || args.includes('или') ) {
-      const i = args.includes('or') ? args.indexOf('or') : args.indexOf('или');
-      const arg1 = args.slice(0, i).join(" ");
-      const arg2 = args.slice(i + 1).join(" ");
-      if ( !arg1 && !arg2 )
-        return message.reply("What?");
-      if ( !arg1 )
-        return message.reply(arg2);
-      if ( !arg2 )
-        return message.reply(arg1);
+    } else {
+      // Multiple choice
+      const min = 0;
+      const max = args.length;
 
-      return message.reply(Math.random() < 0.5 ? arg1 : arg2);
+      const index = Math.floor(Math.random() * (max - min)) + min;
+
+      return message.reply(args[index]);
     }
-    // Case with one argument: yes or no
-    else {
-      return message.reply(Math.random() < 0.5 ? "Yes" : "No");
-    }
+
   }
 };
