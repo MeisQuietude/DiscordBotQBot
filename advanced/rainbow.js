@@ -1,4 +1,4 @@
-const {rainbow_role, server_id} = require('../config');
+const { rainbow_role, server_id } = require('../config');
 
 class Rainbow {
   constructor(client) {
@@ -10,7 +10,7 @@ class Rainbow {
 
   * generateColor() {
     let i = 0;
-    while ( true ) {
+    while (true) {
       i === 255 ? i = 0 : ++i;
       const red = sin_to_hex(i, 0 * Math.PI * 2 / 3); // 0   deg
       const blue = sin_to_hex(i, 1 * Math.PI * 2 / 3); // 120 deg
@@ -29,12 +29,12 @@ class Rainbow {
   }
 
   start() {
-    return setInterval(() => {
+    return setInterval((() => {
 
       const nextColor = this.colors.next().value;
       this.role.setColor(nextColor);
 
-    }, 1)
+    }), 1)
   }
 }
 
