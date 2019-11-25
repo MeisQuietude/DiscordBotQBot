@@ -1,85 +1,91 @@
 const log = require('../advanced/logged');
 const guild = require("discord.js");
-const available_roles = [
-  'Python', 'Django', 'Flask', 'Tornado',
-  'Java',
-  'Web',
-  'JavaScript', 'NodeJS', 'Vue', 'React', 'Angular', 'Backbone',
-  'PHP',
-  'C#', 'Unity',
-  'C++',
-  'C'
+const allowedRoles = [
+  ('python', 'Python'),
+  ('django', 'Django'),
+  ('flask', 'Flask'),
+  ('tornado', 'Tornado'),
+  
+  ('java', 'Java'),
+  
+  ('js', 'JavaScript'),
+  ('nodejs', 'NodeJS'),
+  ('vue', 'Vue'),
+  ('react', 'React'),
+  ('angular', 'Angular'),
+  
+  ('php', 'PHP'),
+  
+  ('c', 'C'),
+  ('cpp', 'C++'),
+  ('csharp', 'C#'),
 ];
+
+const isRoleAllowed = role => {
+  for (let r in allowedRoles) {
+    if (r[0] == role) return true;
+  }
+  return false;
+}
 
 module.exports = {
   name: 'role',
   aliases: ['roles'],
-  description: 'add new role to this user',
+  description: 'configure roles of user',
   guildOnly: true,
   args: true,
-  usage: '<action> <roles>      || <action> could be [+/-, set/del, add/rm]',
-  positive_action: '+, set, add, new',
-  negative_action: '-, rm, del, remove',
+  usage: '<action> <roles>      || <action> could be [+/-, add/rm]',
+  positive_action: '+, add',
+  negative_action: '-, rm',
   cooldown: 2,
   async execute(message, args) {
     if ( args.length < 2 ) {
-      message.reply("Need at least action (set or remove) and 1 role: [set/remove] [...roles]");
-      return;
+      return message.reply("Need an action (add or rm) and at least one role: [add/rm] [...roles]");
     }
 
-    let enteredRoles = args.slice(1);
-    let areValidRoles = [];
-    let incorrectEnteredRoles = [];
+    const action = args[0].toLowerCase();
+    const enteredRoles = args.slice(1).map(r => r.toLowerCase());
 
-    await enteredRoles.forEach(role => {
-      let found = false;
-      available_roles.forEach(av_role => {
-        if ( role.toLowerCase() === av_role.toLowerCase() ) {
-          areValidRoles.push(av_role);
-          found = true;
-        }
-      });
-      if ( !found ) {
-        incorrectEnteredRoles.push(role);
-      }
-    });
+    let validRoles = [];
+    let invalidRoles = [];
 
-    switch (args[0].toLowerCase()) {
+    for (let role in enteredRoles) {
+      let array = (isRoleAllowed(role)) ? validRoles : invalidRoles; 
+      array.push(role);
+    }
+
+    switch (action) {
       case '+':
-      case 'new':
-      case 'add':
-      case 'set': {
-        areValidRoles.forEach(async text_role => {
-          let role = message.guild.roles.find(r => r.name === text_role);
-          await message.member.addRole(role);
+      case 'add': {
+        validRoles.forEach(async role_name => {
+          let role = await message.guild.roles.find(r => r.name === role_name);
+          message.member.addRole(role);
         });
 
         let reply = ``;
-        if ( areValidRoles.length ) {
-          reply += `\nyour new roles: ${areValidRoles.join(", ")}`;
+        if ( validRoles.length ) {
+          reply += `\nyour new roles: ${validRoles.join(", ")}`;
         }
-        if ( incorrectEnteredRoles.length ) {
-          reply += `\ninvalid roles: ${incorrectEnteredRoles.join(", ")}`;
+        if ( invalidRoles.length ) {
+          reply += `\ninvalid roles: ${invalidRoles.join(", ")}`;
         }
         message.reply(reply);
+        
         break;
       }
       case '-':
-      case 'rm':
-      case 'del':
-      case 'delete':
-      case 'remove': {
-        areValidRoles.forEach(async text_role => {
-          let role = message.guild.roles.find(r => r.name === text_role);
-          await message.member.removeRole(role);
+      case 'rm': {
+        validRoles.forEach(async role_name => {
+          let role = await message.guild.roles.find(r => r.name === role_name);
+          message.member.removeRole(role);
         });
 
         let reply = ``;
-        if ( areValidRoles.length ) {
-          reply += `removed roles: ${areValidRoles.join(", ")}`;
+        if ( validRoles.length ) {
+          reply += `removed roles: ${validRoles.join(", ")}`;
         }
-        if ( incorrectEnteredRoles.length ) {
-          reply += `\nInvalid roles: ${incorrectEnteredRoles.join(", ")}`;
+        if ( invalidRoles.length ) {
+          reply += `\nInvalid roles: ${invalidRoles.join(", ")}`;
         }
         message.reply(reply);
 
