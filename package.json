@@ -7,7 +7,7 @@
     "discord.js": "latest",
     "google-parser": "^2.0.5",
     "libsodium-wrappers": ">=0.7.3",
-    "lodash": ">= 4.17.11",
+    "lodash": ">= 4.17.13",
     "node-fetch": "latest",
     "node-gyp": "3.8.0",
     "node-opus": "^0.2.7",
