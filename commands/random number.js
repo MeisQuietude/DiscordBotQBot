@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../utils/utils';
+import { getRandomNumber } from '../utils';
 
 module.exports = {
   name: "random number",
