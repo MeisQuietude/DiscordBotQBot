@@ -82,7 +82,8 @@ client.on('message', message => {
   try {
     command.execute(message, args);
   } catch (error) {
-    message.reply('there is no that command!');
+    Logger.error(error);
+    message.reply('There was an error while executing this command, sorry!');
   }
 });
 
