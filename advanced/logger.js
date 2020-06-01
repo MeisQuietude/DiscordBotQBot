@@ -1,5 +1,4 @@
 const fs = require('fs');
-const relative_log_path = './logs/';
 const path = require('path');
 const moment = require('moment');
 
