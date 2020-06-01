@@ -8,7 +8,7 @@ const {default_role, prefix} = require('./config.json');
 // const rainbow = require('./advanced/rainbow');
 
 // Advanced utils
-const Logger = new (require('./advanced/logged').Logger)();
+const Logger = new (require('./advanced/logger').Logger)();
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();

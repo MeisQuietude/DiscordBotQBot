@@ -1,5 +1,5 @@
 const googleParser = require('google-parser');
-const logged = require('../advanced/logged');
+const logged = require('../advanced/logger');
 
 module.exports = {
   name: 'google',

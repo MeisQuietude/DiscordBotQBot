@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const Logger = new (require('./advanced/logged').Logger)();
+const Logger = new (require('./advanced/logger').Logger)();
 
 module.exports = {
   name: 'cat',
