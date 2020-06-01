@@ -1,4 +1,4 @@
-import { getRandomNumber } from '../utils';
+const getRandomNumber = require('../utils').getRandomNumber;
 
 module.exports = {
   name: "random number",
