@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const log = require('../advanced/logged');
+const Logger = new (require('./advanced/logged').Logger)();
 
 module.exports = {
   name: 'cat',
@@ -16,7 +16,7 @@ module.exports = {
             return res.json();
           }
           throw new Error('Request failed!');
-        }, networkError => log.execute(networkError.message, 'errors'))
+        }, networkError => Logger.error(networkError.message))
         .then(jsonRes => {
           message.reply(jsonRes.file);
         })

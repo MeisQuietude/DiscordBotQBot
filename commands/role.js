@@ -1,4 +1,4 @@
-const log = require('../advanced/logged');
+const Logger = new (require('./advanced/logged').Logger)();
 const guild = require("discord.js");
 const allowedRoles = [
   ('python', 'Python'),
@@ -93,6 +93,6 @@ module.exports = {
       }
     }
 
-    log.execute(`${message.member.user.username} ${message.member.user.id}, role ${args[0]} ${enteredRoles}`, 'role');
+    Logger.action(`Managing role, ${message.member.user.username} ${message.member.user.id}, role ${args[0]} ${enteredRoles}`);
   }
 };

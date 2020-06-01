@@ -8,7 +8,7 @@ const {default_role, prefix} = require('./config.json');
 // const rainbow = require('./advanced/rainbow');
 
 // Advanced utils
-const log = require('./advanced/logged');
+const Logger = new (require('./advanced/logged').Logger)();
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -43,7 +43,9 @@ client.on('message', message => {
   // Find command by name or alias
   const command = client.commands.get(commandName)
       || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-  if ( !command ) return;
+  if ( !command ) {
+    return Logger.error(`Command not exists: ${commandName}`);
+  };
 
   // If we must not use this in DM
   if ( command.guildOnly && message.channel.type !== 'text' ) {
@@ -80,7 +82,6 @@ client.on('message', message => {
   try {
     command.execute(message, args);
   } catch (error) {
-    log.execute(`Unknown command: ${commandName}\n${error}\n\n`, `errors`);
     message.reply('there is no that command!');
   }
 });

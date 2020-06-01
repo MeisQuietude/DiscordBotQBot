@@ -1,18 +1,50 @@
 const fs = require('fs');
 const relative_log_path = './logs/';
+const path = require('path');
+const moment = require('moment');
 
-module.exports = {
-  name: 'log',
-  execute(message, file) {
-    let d = new Date();
-    let date = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}`;
-    let time = `${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}:${d.getMilliseconds()}`;
-    message = `${date}, ${time}; ${message}\n`;
-    let file_path = `${relative_log_path}${file.trim()}`;
-    if (!file_path.endsWith('.txt')) file_path += '.txt';
+const pathToLogs = './logs/';
+const FILES = {
+  ERROR: path.join(pathToLogs, "errors.txt"),
+  ACTIONS: path.join(pathToLogs, "actions.txt")
+}
 
-    fs.writeFile(file_path, message, {flag: 'a+'}, (err) => {
-      if ( err ) console.log(err)
+class Logger {
+  constructor() {
+    if (!fs.existsSync(pathToLogs)) {
+      fs.mkdirSync(pathToLogs);
+    };
+
+    Object.values(FILES).forEach(path_ => {
+      if (!fs.existsSync(path_)) {
+        fs.openSync(path_, 'w+');
+      }
+    });
+  }
+
+  _getPrefix() {
+    return `[${moment().utc().format()}]`;
+  }
+
+  async error(message) {
+    const path_ = FILES.ERROR;
+    const result_message = `${this._getPrefix()} ${message}\r\n`;
+
+    await fs.appendFile(path_, result_message, (err) => {
+      if ( err ) console.log(err);
     })
   }
+  
+  async action(message) {
+    const path_ = FILES.ACTIONS;
+    const result_message = `${this._getPrefix()} ${message}\r\n`;
+    
+    await fs.appendFile(path_, result_message, (err) => {
+      if ( err ) console.log(err);
+    })
+  }
+}
+
+module.exports = {
+  Logger
 };
