@@ -1,4 +1,4 @@
-const Logger = new (require('./advanced/logger').Logger)();
+const Logger = new (require('../advanced/logger').Logger)();
 const guild = require("discord.js");
 const allowedRoles = [
   ('python', 'Python'),
