@@ -38,6 +38,4 @@ class Rainbow {
   }
 }
 
-module.exports = {
-  Rainbow
-};
+module.exports = Rainbow;
