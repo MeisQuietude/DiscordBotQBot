@@ -1,5 +1,5 @@
 const googleParser = require('google-parser');
-const logged = require('../advanced/logger');
+const Logger = new (require('../utils').Logger)();
 
 module.exports = {
   name: 'google',
@@ -22,6 +22,6 @@ module.exports = {
 
     message.reply(answer);
 
-    logged.execute(`ID@${message.author.id} CONTENT@ ${data}`, 'google');
+    Logger.action(`ID@${message.author.id} CONTENT@ ${data}`);
   }
 };

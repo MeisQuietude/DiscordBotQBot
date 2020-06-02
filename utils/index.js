@@ -1,5 +1,7 @@
-const getRandomNumber = require('./getRandomNumber.js');
+const getRandomNumber = require('./getRandomNumber');
+const Logger = require('./logger');
 
 module.exports = {
-    getRandomNumber
+    Logger,
+    getRandomNumber,
 }
