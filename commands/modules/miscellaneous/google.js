@@ -1,5 +1,5 @@
 const googleParser = require("google-parser");
-const Logger = new (require("../../utils").Logger)();
+const Logger = new (require("../../../utils").Logger)();
 
 module.exports = {
     name: "google",

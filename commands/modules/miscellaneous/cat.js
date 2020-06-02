@@ -1,16 +1,16 @@
 const fetch = require("node-fetch");
-const Logger = new (require("../../utils").Logger)();
+const Logger = new (require("../../../utils").Logger)();
 
 module.exports = {
-    name: "dog",
-    aliases: ["doggy", "dggy"],
-    description: "Get random dog image",
+    name: "cat",
+    aliases: ["kit", "kitty"],
+    description: "Get random cat image",
     guildOnly: false,
     args: false,
     usage: "",
     cooldown: 5,
     execute(message, args) {
-        fetch("https://dog.ceo/api/breeds/image/random")
+        fetch("https://aws.random.cat/meow") // https://cataas.com/cat
             .then(
                 (res) => {
                     if (res.ok) {
@@ -21,7 +21,7 @@ module.exports = {
                 (networkError) => Logger.error(networkError.message)
             )
             .then((jsonRes) => {
-                message.reply(jsonRes.message);
+                message.reply(jsonRes.file);
             });
     },
 };
