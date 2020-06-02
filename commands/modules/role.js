@@ -1,4 +1,4 @@
-const Logger = new (require("../utils").Logger)();
+const Logger = new (require("../../utils").Logger)();
 // const guild = require("discord.js");
 
 const allowedRoles = [

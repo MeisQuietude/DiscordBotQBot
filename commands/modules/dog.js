@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-const Logger = new (require("../utils").Logger)();
+const Logger = new (require("../../utils").Logger)();
 
 module.exports = {
     name: "dog",

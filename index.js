@@ -17,12 +17,12 @@ const cooldowns = new Discord.Collection();
 
 // Check for *.js files in ./commands/
 const commandFiles = fs
-    .readdirSync("./commands")
+    .readdirSync("./commands/modules/")
     .filter((file) => file.endsWith(".js"));
 
 // Set it to Discord.Collection
 for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
+    const command = require(`./commands/modules/${file}`);
     client.commands.set(command.name, command);
 }
 

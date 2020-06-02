@@ -1,4 +1,4 @@
-const getRandomNumber = require("../utils").getRandomNumber;
+const getRandomNumber = require("../../utils").getRandomNumber;
 
 module.exports = {
     name: "coinflip",
