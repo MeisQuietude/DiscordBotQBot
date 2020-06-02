@@ -24,7 +24,7 @@ for ( const file of commandFiles ) {
   client.commands.set(command.name, command);
 }
 
-client.on('ready', () => {
+client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 
   // const setRoleRainbowColor = new rainbow.Rainbow(client);
