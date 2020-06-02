@@ -10,17 +10,21 @@
     "author": "Quietude",
     "license": "GNU",
     "dependencies": {
+        "@discordjs/opus": "^0.3.2",
         "bufferutil": "~4.0.1",
         "discord.js": "~12.2.0",
         "google-parser": "~2.0.5",
         "libsodium-wrappers": "~0.7.6",
         "lodash": "~4.17.15",
+        "moment": "~2.26.0",
         "node-fetch": "~2.6.0",
         "node-gyp": "~5.1.1",
         "node-opus": "~0.3.3",
+        "node-pre-gyp": "^0.15.0",
         "opusscript": "~0.0.7",
+        "sodium": "^3.0.2",
         "uws": "~100.0.1",
-        "moment": "~2.26.0"
+        "ytdl-core-discord": "^1.2.0"
     },
     "devDependencies": {
         "eslint": "^7.1.0",
