@@ -1,12 +1,12 @@
 const getRandomNumber = require('../utils').getRandomNumber;
 
 module.exports = {
-  name: "random number",
+  name: "randnum",
   aliases: ["rand", "r", "random"],
-  description: 'get random number',
+  description: 'Get random number',
   guildOnly: false,
   args: false,
-  usage: '[<number from> <number to>]',
+  usage: '[<number from [0]> <number to> [100]]',
   cooldown: 1,
   execute(message, args) {
     let min, max; // included
