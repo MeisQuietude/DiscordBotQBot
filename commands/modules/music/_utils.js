@@ -100,4 +100,5 @@ const startPlaying = async (message, playURL) => {
 module.exports = {
     connectVoiceChannel,
     startPlaying,
+    musicStateUpdate,
 };
