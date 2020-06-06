@@ -17,6 +17,7 @@ Discord.Structures.extend("Guild", (Guild) => {
                 isPlaying: false,
                 currentPlay: null,
                 dispatcher: null,
+                connection: null,
                 volume: 1,
             };
         }
