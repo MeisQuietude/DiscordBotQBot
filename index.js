@@ -42,7 +42,9 @@ const commandModules = fs
 
 // Set it to Discord.Collection
 for (const module of commandModules) {
-    const moduleFiles = fs.readdirSync(`./commands/modules/${module}`);
+    const moduleFiles = fs
+        .readdirSync(`./commands/modules/${module}`)
+        .filter((fileName) => !fileName.startsWith("_"));
     for (const file of moduleFiles) {
         const command = require(`./commands/modules/${module}/${file}`);
         client.commands.set(command.name, command);
