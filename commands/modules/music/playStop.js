@@ -13,7 +13,7 @@ module.exports = {
 
         await commandClean.execute(message, args);
         if (guild.music.dispatcher) {
-            guild.music.dispatcher.emit("finish");
+            await guild.music.dispatcher.emit("finish");
         }
     },
 };
