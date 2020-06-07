@@ -1,8 +1,8 @@
 const { connectVoiceChannel, startPlaying } = require("./_utils");
 
 module.exports = {
-    name: "music",
-    aliases: ["play", "p"],
+    name: "play",
+    aliases: ["music", "p"],
     description: "Play music as audio from YouTube",
     guildOnly: true,
     args: true,
