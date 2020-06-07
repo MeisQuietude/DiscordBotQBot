@@ -1,4 +1,4 @@
-const commandQueue = require("./queue");
+const commandQueue = require("./queueDisplay");
 
 const shuffle = (array) => {
     /* Fisher–Yates Shuffle
