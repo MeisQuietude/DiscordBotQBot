@@ -88,12 +88,3 @@ module.exports = {
     },
 };
 
-/*
-const cmds = {
-    prefix: "!",
-    ping: "pong",
-    user: "shows (Username, UserID, UserAvatar) [ !user @mention ]",
-    role:
-        "set/remove (+/-, add/delete) (roles) [ !role set role1 role2 roleN ] [ !role - php ]",
-};
-*/
