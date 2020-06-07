@@ -48,6 +48,7 @@ for (const module of commandModules) {
         .filter((fileName) => !fileName.startsWith("_"));
     for (const file of moduleFiles) {
         const command = require(`./commands/modules/${module}/${file}`);
+        command.module = module;
         client.commands.set(command.name, command);
     }
 }

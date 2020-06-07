@@ -1,4 +1,5 @@
 const { prefix } = require("../../../config");
+const { wrapAsQuote } = require("../../../utils");
 
 module.exports = {
     name: "help",
@@ -13,13 +14,32 @@ module.exports = {
         const { commands } = message.client;
 
         if (!args.length) {
-            data.push("Here's a list of all my commands:");
-            data.push(
-                commands
-                    .map((command) => `**${command.name}**`)
-                    .sort()
-                    .join(", ")
+            data.push("Here's a list of all my commands:\n");
+
+            const modules = {};
+            commands.forEach((cmd) =>
+                modules[cmd.module]
+                    ? modules[cmd.module].push(cmd)
+                    : (modules[cmd.module] = [cmd])
             );
+            Object.keys(modules)
+                .sort()
+                .forEach((module_) => {
+                    const moduleCommands = modules[module_];
+                    const moduleTitled =
+                        module_[0].toUpperCase() + module_.slice(1);
+                    data.push(
+                        wrapAsQuote(`${moduleTitled}\n`, "css") +
+                            moduleCommands
+                                .map(
+                                    (cmd) =>
+                                        `> **${cmd.name}** — ${cmd.description}`
+                                )
+                                .sort()
+                                .join("\n") +
+                            "\n"
+                    );
+                });
             data.push(
                 `\nYou can send \`${prefix}help [command name]\` to get info on a specific command!`
             );
