@@ -12,12 +12,17 @@ module.exports = {
         const guild = message.guild;
 
         const currentPlay = guild.music.currentPlay;
+        const isPlaying = guild.music.isPlaying;
         const queue = guild.music.queue;
 
         let replyMessage = "";
 
         if (currentPlay) {
-            replyMessage += `Current playing: ${currentPlay}\n\n`;
+            replyMessage += `Current playing: ${currentPlay}`;
+            if (!isPlaying) {
+                replyMessage += " (on pause)";
+            }
+            replyMessage += "\n\n";
         }
         if (!queue.length) {
             replyMessage += "Queue is empty!";
