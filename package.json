@@ -24,7 +24,7 @@
         "opusscript": "~0.0.7",
         "sodium": "^3.0.2",
         "uws": "~100.0.1",
-        "ytdl-core-discord": "^1.2.0"
+        "ytdl-core-discord": "^1.2.3"
     },
     "devDependencies": {
         "eslint": "^7.1.0",
