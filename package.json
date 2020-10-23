@@ -15,7 +15,7 @@
         "discord.js": "~12.2.0",
         "google-parser": "~2.0.5",
         "libsodium-wrappers": "~0.7.6",
-        "lodash": "~4.17.15",
+        "lodash": "~4.17.20",
         "moment": "~2.26.0",
         "node-fetch": "~2.6.0",
         "node-gyp": "~5.1.1",
