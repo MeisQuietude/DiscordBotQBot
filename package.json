@@ -16,7 +16,7 @@
         "google-parser": "~2.0.5",
         "libsodium-wrappers": "~0.7.6",
         "lodash": "~4.17.15",
-        "moment": "~2.26.0",
+        "moment": "~2.29.0",
         "node-fetch": "~2.6.0",
         "node-gyp": "~5.1.1",
         "node-opus": "~0.3.3",
